@@ -327,7 +327,7 @@ sqllocaldb start MSSQLLocalDB
 # Grant write permissions to upload directory
 $uploadPath = "C:\path\to\ContosoUniversity\Uploads\TeachingMaterials"
 $acl = Get-Acl $uploadPath
-$rule = New-Object System.Security.AccessFile.FileSystemAccessRule("IIS_IUSRS", "Modify", "Allow")
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule("IIS_IUSRS", "Modify", "Allow")
 $acl.SetAccessRule($rule)
 Set-Acl $uploadPath $acl
 ```
